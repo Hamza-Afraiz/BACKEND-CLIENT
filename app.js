@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
-const server=require("http").createServer(app);
-const io=require("socket.io")(server);
-server.listen(3000, "192.168.77.129");
+// const server=require("http").createServer(app);
+// const io=require("socket.io")(server);
+// server.listen(3000, "192.168.77.129");
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
@@ -10,9 +10,9 @@ const cors = require('cors');
 var passport = require('./config/passport');
 const authJwt = require('./middlewares/jwt');
 
-io.on("connection",socket => {
-    console.log("a user connected");
-});
+// io.on("connection",socket => {
+//     console.log("a user connected");
+// });
 require('dotenv/config');
 
 app.use(cors());
