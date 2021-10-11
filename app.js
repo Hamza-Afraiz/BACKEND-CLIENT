@@ -82,7 +82,10 @@ mongoose.connect(process.env.CONNECTION_STRING, {
 .catch((err)=> {
     console.log(err);
 })
+app.get("/",(req,res)=>{
+    res.send("wellcome")
 
+})
 //Server
 app.listen(process.env.port || 3000, ()=>{
 
