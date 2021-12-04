@@ -64,7 +64,7 @@ app.use(`${api}/upcomingOrder`, upcomingOrderRoutes);
 app.use(`${api}/SubCategory`, SubCategoryRoutes);
 app.use(`${api}/complaint`, complaintRoutes);
 app.use(`${api}/chatbot`, chatbotRoutes);
-app.use(`${api}/`, homeRoutes);
+app.use(`home/`, homeRoutes);
 
 
 
