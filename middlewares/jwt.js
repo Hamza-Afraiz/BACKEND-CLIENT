@@ -40,7 +40,7 @@ function authJwt() {
             `${api}/complaint/notAnswered/`,
             `${api}/receipt/`,
             `${api}/chatbot/`,
-            `home`,
+            `/home`,
 
             
         ]
