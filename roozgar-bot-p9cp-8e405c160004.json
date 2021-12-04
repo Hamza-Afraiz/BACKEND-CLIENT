@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "roozgar-bot-p9cp",
+  "private_key_id": "8e405c160004524625134d4b5ad1f10a48aa64b4",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCueKj1ydIh+6Gb\nP4nJ0/il2kdhL4g0KZ1tkuTZAcxaL7OXC/eUKwTuTwtfkrycOQwCoAjhA5w7Q8uA\nw/msNZjcsYOJEpsjDV0efQRMjFx/BvWHR9xD4YJc5eVY/aTryUdLmaHwPGSt1e7Y\n16KVA4mcHQz+vOhU0XiNLYbYdzE4e9MpwaHs5LmKwW0d9NUm3T5tEblw9QlhDkym\nl+ispLnfO2u/EDxcrZ3ADJ3WDYm3YQY10RExdhIz0tS4drsOUyycS6m1JLKpYkrk\n39sjfOovjgCmNiDUili9cpbbQiKpi9rNQ85TZjZ57gdZBINojxoRIDQ05OjAp2C2\nklHmQ/OlAgMBAAECggEARk6OO7nQCWy243JXyrK2NNOAxyuZ1fddHr4+pSpB2Kf3\nVWt3ocgyLPxCZ4mgos2kRtyJp29GgmVf+OxATQKuLmUETfTm+lmUyEf1twkq7u91\nesXc/6e82kW0Rce0sWWDavYmmUIlCh43KT/AHw91YSkdxvuGHkPpMe8CM3HYrlsf\nVqnrydmIHlB+IPUqj2YQ08B4SajkRWOM+V9blTJFsMmsFL/KLS4y4hCnLzKNDylC\njam/H1WSJYA92sgNchI/M/ntz3qK67ot1cxqHZxFejyoGJmihGXYdolcjSmtKagt\nj9m0eI18XHGqmPMHzClotflVH7m3OpXRrEF6lY5JgwKBgQD2YeFYHaUg15HgsHs2\n9i/PjZJQJKQ7/hiHkVFcyXMk6B5I5d4hygbUo9tGtVW3TtET6vnlFHTwwAzoMjw0\nUr//uPLFsN8UYKZFXC1Ta7IgMdm9C/R0q9sSopV0VBIbd9CIsQ8WyCmI2MNh9/JG\nlRArD8yzvQUyEFYQlK93vLOgtwKBgQC1SCq14mjKC81ugloasBAp8wW4Dm+AkV6L\nDcd/zxJIYaCKz9BNWPx3NRSVC960byQdNMU42Ykxg34BKVn3BBXK11htbrA7p7mK\nG2peK+Mg5dofoyNsP94yTWNPqmCpeDgrsJYYNasRhYVAJicsUjY9E96QRd3kRjZa\nWnmnvcr6gwKBgQC/mJY4g7UpuPmEFTl8IC5F5P3mvNfKn2pL4kG3OiEEjk0eu0Lm\nW8i8C0A12EXz6qLELnJuJl5Z6b8fwhD3T3JnVlfUTBruKcqjHW9R8+ntB1cfn/BV\n2l7eOvimIcqC+cV8xtPJD5bdCFPIF5ycLscH9Z1mGJO1vuZutnFNV70IOQKBgHQI\n/nWvt31kcplCzKP6gE4ppUZ7zvlPk2GUb1cq1zwHaXiQrndj9y3ihwskLuf1n/sl\n1PufmoZb8WKS8mf/cGeG0a4yRJHauRNimwIuO1LKbYUEql7WvsYZ7PCIURkIv4OP\no3NZnuc3POSjxz1CXj9YIYTdg7tjCdVpxicNgAg7AoGBAM1IoIgTq5flS30V8ZtP\nrYCo1n7RXDcV3Dt5Iz3qGAIMsmYUB+IN6elU2bXxFtbdEwG1Pf3Yxgb6Zr8F9aU9\nn4gqUq5lDBFwNKH2uQTqK4fLqroupDvUnw0AwEAGRzHOA2AK6Ep+3euB7LZEk4NQ\n1yKODJ4Nl0Gh0hmfkoM+utut\n-----END PRIVATE KEY-----\n",
+  "client_email": "roozgar-client@roozgar-bot-p9cp.iam.gserviceaccount.com",
+  "client_id": "117694774835287651360",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/roozgar-client%40roozgar-bot-p9cp.iam.gserviceaccount.com"
+}
