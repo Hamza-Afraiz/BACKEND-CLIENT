@@ -119,7 +119,7 @@ router.get('/:id', async(req,res)=>{
     res.status(200).send(user);
 })
 router.post('/checkPhoneNumber', async(req,res)=>{
-    console.log('phone number is ' + req.body.checkNumber)
+    console.log('phone numberr is ' + req.body.checkNumber)
     const user = await Client.findOne({phone:req.body.checkNumber});
 
     if(!user) {
@@ -127,7 +127,7 @@ router.post('/checkPhoneNumber', async(req,res)=>{
        res.status(200).send({user: "false" }) 
     } 
     else{
-        res.status(400).send({user:'true'});}
+        res.status(400).send({user:'true',data:user});}
 })
 
 
