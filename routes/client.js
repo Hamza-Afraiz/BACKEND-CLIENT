@@ -123,7 +123,7 @@ router.post('/checkPhoneNumber', async(req,res)=>{
     const user = await Client.findOne({phone:req.body.checkNumber});
 
     if(!user) {
-        res.send(500)
+       //nothing
     } 
     else{
         res.status(200).send(user);}
