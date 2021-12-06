@@ -124,9 +124,10 @@ router.post('/checkPhoneNumber', async(req,res)=>{
 
     if(!user) {
        //nothing
+       res.status(200).send({user: "false" }) 
     } 
     else{
-        res.status(200).send(user);}
+        res.status(400).send({user:'true'});}
 })
 
 
