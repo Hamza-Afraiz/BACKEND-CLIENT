@@ -35,7 +35,7 @@ router.get(`/`, async (req, res) => {
 router.get(`/all`, async (req, res) => {
    
 
-    const service = await SubCategory.findAll().populate('category').limit(6);
+    const service = await SubCategory.find().limit(6);
 
     if (!service) {
         res.status(500).json({ success: false });
