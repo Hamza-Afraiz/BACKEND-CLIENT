@@ -32,6 +32,16 @@ router.get(`/`, async (req, res) => {
     }
     res.send(service);
 });
+router.get(`/all`, async (req, res) => {
+   
+
+    const service = await SubCategory.findAll().populate('category').limit(6);
+
+    if (!service) {
+        res.status(500).json({ success: false });
+    }
+    res.send(service);
+});
 
 
 module.exports =router;

@@ -41,6 +41,7 @@ function authJwt() {
             `${api}/receipt/`,
             `${api}/chatbot/`,
             `/home`,
+            `${api}/service/subCategory/all`,
 
             
         ]
