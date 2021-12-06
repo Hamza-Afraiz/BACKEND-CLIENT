@@ -44,7 +44,7 @@ router.get('/', async(req,res)=>{
     res.status(200).send(user);
 })
 router.get('/all', async(req,res)=>{
-    const user = await Vendor.findAll().limit(10);
+    const user = await Vendor.find().limit(10);
 
     if(!user) {
         res.status(500).json({message: 'The user with the given ID was not found.'})
