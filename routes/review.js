@@ -1,6 +1,7 @@
 const {Review} = require('../models/review');
 const express = require('express');
 const router = express.Router();
+const fs = require("fs");
 router.get(`/`, async (req, res) => {
     let filter = {};
     if (req.query.id) {
@@ -16,7 +17,31 @@ router.get(`/`, async (req, res) => {
 });
 
 
+
+// list of trigger words obtained from: http://www2.imm.dtu.dk/pubdb/pubs/6010-full.html
+
+const filename = "triggerwords.txt";
+
+const qualifiedFilename = process.cwd() + "/" + filename;
+
+var contents = fs.readFileSync(qualifiedFilename, "utf8").split("\n");
+
+const trigger_words = contents.map((word) => word.toLocaleLowerCase());
+
+// use the function below to detect trigger words in a sentence.
+const includes_trigger_word = (sentence) => {
+  const str = sentence.replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ");
+  const tokens = str.split(" ").map((word) => word.toLocaleLowerCase());
+  console.log(tokens);
+  return tokens.filter((value) => trigger_words.includes(value)).length !== 0
+    ? true
+    : false;
+};
+
+
+
 router.post('/',  (req,res)=>{
+    console.log(includes_trigger_word(req.body.textarea));
  Review.findOne({clientId:req.body.clientId,appoitmentId:req.body.appoitmentId}).then(user =>{
         if(user) {
             console.log('if scene');
