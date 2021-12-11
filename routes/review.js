@@ -20,7 +20,7 @@ router.get(`/`, async (req, res) => {
 
 // list of trigger words obtained from: http://www2.imm.dtu.dk/pubdb/pubs/6010-full.html
 
-const filename = "./triggerwords.txt";
+const filename = "/triggerwords.txt";
 
 // const qualifiedFilename = process.cwd() + "/" + filename;
 // console.log()
