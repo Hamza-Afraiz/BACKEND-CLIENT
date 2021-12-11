@@ -43,34 +43,44 @@ const includes_trigger_word = (sentence) => {
 
 router.post('/',  (req,res)=>{
     console.log(includes_trigger_word(req.body.textarea));
+    var spam=includes_trigger_word(req.body.textarea);
+    console.log("spam is",spam)
+  
  Review.findOne({clientId:req.body.clientId,appoitmentId:req.body.appoitmentId}).then(user =>{
         if(user) {
             console.log('if scene');
             return res.status(404).json({success: true, message: 'already reviewed!'})
         } else {
             console.log('else scene');
-            let comment = new  Review({
-                clientId: req.body.clientId,
-                vendorId: req.body.vendorId,
-                serviceId: req.body.serviceId,
-                rating:req.body.rating,
-               description:req.body.textarea,
-               vendorName: req.body.vendorName,
-               clientName: req.body.clientName,
-               appoitmentId: req.body.appoitmentId,
-              
-        
-        
-        
-        
-                
-            }).populate(['clientId,vendorId,serviceId'])
-            comment =comment.save();
-        
-            if(!comment)
-            return res.status(400).send('the review cannot be created!')
-            console.log("comment is ",comment)
-            res.send(comment);
+            if(spam==false){
+                let comment = new  Review({
+                    clientId: req.body.clientId,
+                    vendorId: req.body.vendorId,
+                    serviceId: req.body.serviceId,
+                    rating:req.body.rating,
+                   description:req.body.textarea,
+                   vendorName: req.body.vendorName,
+                   clientName: req.body.clientName,
+                   appoitmentId: req.body.appoitmentId,
+                  
+            
+            
+            
+            
+                    
+                }).populate(['clientId,vendorId,serviceId'])
+                comment =comment.save();
+            
+                if(!comment)
+                return res.status(400).send('the review cannot be created!')
+                console.log("comment is ",comment)
+                res.send(comment);
+            }
+            else{
+                return res.status(400).send('You have used spam words please try writting comment again')
+
+            }
+            
         }
     }).catch(err=>{
        return res.status(500).json({success: false, error: err}) 
