@@ -20,11 +20,12 @@ router.get(`/`, async (req, res) => {
 
 // list of trigger words obtained from: http://www2.imm.dtu.dk/pubdb/pubs/6010-full.html
 
-const filename = "triggerwords.txt";
+const filename = "./triggerwords.txt";
 
-const qualifiedFilename = process.cwd() + "/" + filename;
+// const qualifiedFilename = process.cwd() + "/" + filename;
+// console.log()
 
-var contents = fs.readFileSync(qualifiedFilename, "utf8").split("\n");
+var contents = fs.readFileSync(filename, "utf8").split("\n");
 
 const trigger_words = contents.map((word) => word.toLocaleLowerCase());
 
