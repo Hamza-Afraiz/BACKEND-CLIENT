@@ -2,6 +2,7 @@ const {Review} = require('../models/review');
 const {Vendor}=require('../models/vendor')
 const express = require('express');
 const router = express.Router();
+const axios = require('axios');
 const fs = require("fs");
 router.get(`/`, async (req, res) => {
     let filter = {};
@@ -44,6 +45,7 @@ const includes_trigger_word = (sentence) => {
 router.post("/getOverview", async (req, res) => {
     //const { _id } = req.params;
     const _id=req.body.id;
+    console.log("id is",req.body.id)
     try {
       const vendor = await Vendor.findById(_id);
       const vendorId = vendor._id;
