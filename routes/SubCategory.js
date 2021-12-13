@@ -19,6 +19,7 @@ router.post('/', async (req,res)=>{
 
     res.send(category);
 })
+
 router.get(`/`, async (req, res) => {
     let filter = {};
     if (req.query.id) {
@@ -42,6 +43,32 @@ router.get(`/all`, async (req, res) => {
     }
     res.send(service);
 });
+router.post("/getSubCategories/", async (req, res) => {
+    try {
+      const subCategories = await SubCategory.find();
+      subCategoryNames = [];
+      for (let i = 0; i < subCategories.length; i++) {
+        subCategoryNames[i] = subCategories[i].title;
+        console.log(subCategories)
+      }
+      let payload = { sentence: req.body.sentence, categories: subCategoryNames, threshold: 3 };
+  
+      let response = await axios.post('http://46b1-37-111-134-191.ngrok.io/nlp', payload);
+      
+      var similar_subCategories = response.data.similar_subCategories;
+  
+      const filtered_subCategories = [];
+  
+      for ( var subCategoryTitle in similar_subCategories ) {
+        filtered_subCategories.push(subCategories.find(subCategory => subCategory.title === subCategoryTitle));
+      }
+  
+      res.send({similar_subCategories: filtered_subCategories});
+  
+    } catch (err) {
+      return res.send(err.message);
+    }
+  });
 
 
 module.exports =router;
