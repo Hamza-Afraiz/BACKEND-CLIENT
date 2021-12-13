@@ -43,6 +43,7 @@ function authJwt() {
             `/home`,
             `${api}/SubCategory/all`,
             `${api}/vendor/all`,
+            `${api}/SubCategory/getSubCategories/`,
 
             
         ]
