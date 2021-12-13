@@ -62,7 +62,7 @@ router.post("/getOverview", async (req, res) => {
   
       let payload = { sentences: comments };
   
-      let response = await axios.post('http://46b1-37-111-134-191.ngrok.io/sentiment', payload);
+      let response = await axios.post('http://18bc-37-111-134-191.ngrok.io/sentiment', payload);
       
       const sentiment = response.data.sentiment;
       

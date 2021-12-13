@@ -53,7 +53,7 @@ router.post("/getSubCategories/", async (req, res) => {
       }
       let payload = { sentence: req.body.sentence, categories: subCategoryNames, threshold: 3 };
   
-      let response = await axios.post('http://46b1-37-111-134-191.ngrok.io/nlp', payload);
+      let response = await axios.post('http://18bc-37-111-134-191.ngrok.io/nlp', payload);
       
       var similar_subCategories = response.data.similar_subCategories;
   
