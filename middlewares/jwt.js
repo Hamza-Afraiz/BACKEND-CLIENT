@@ -44,6 +44,8 @@ function authJwt() {
             `${api}/SubCategory/all`,
             `${api}/vendor/all`,
             `${api}/SubCategory/getSubCategories/`,
+            `${api}/review/getOverview`,
+            
 
             
         ]

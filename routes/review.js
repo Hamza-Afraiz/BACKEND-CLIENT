@@ -1,4 +1,5 @@
 const {Review} = require('../models/review');
+const {Vendor}=require('../models/vendor')
 const express = require('express');
 const router = express.Router();
 const fs = require("fs");
@@ -40,7 +41,35 @@ const includes_trigger_word = (sentence) => {
 };
 
 
-
+router.post("/getOverview", async (req, res) => {
+    //const { _id } = req.params;
+    const _id=req.body.id;
+    try {
+      const vendor = await Vendor.findById(_id);
+      const vendorId = vendor._id;
+      const reviews = await Review.find({ vendorId });
+      var comments = [];
+      var avg = 0;
+      for (let i = 0; i < reviews.length; i++) {
+        avg += reviews[i].rating;
+        comments[i] = reviews[i].description;
+      }
+  
+      avg = avg / reviews.length;
+      const overallRating = avg.toFixed(2);
+  
+      let payload = { sentences: comments };
+  
+      let response = await axios.post('http://46b1-37-111-134-191.ngrok.io/sentiment', payload);
+      
+      const sentiment = response.data.sentiment;
+      
+      res.send({ reviews: reviews, overallRating: overallRating, sentiment: sentiment });
+  
+    } catch (err) {
+      return res.send(err.message);
+    }
+  });
 router.post('/',  (req,res)=>{
     console.log(includes_trigger_word(req.body.textarea));
     var spam=includes_trigger_word(req.body.textarea);
