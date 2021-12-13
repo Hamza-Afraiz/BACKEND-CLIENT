@@ -1,7 +1,7 @@
 const {SubCategory} = require('../models/SubCategory');
 const express = require('express');
 const router = express.Router();
-
+const axios = require('axios');
 router.post('/', async (req,res)=>{
     let category= new SubCategory({
        name:req.body.name
