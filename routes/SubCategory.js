@@ -51,7 +51,7 @@ router.post("/getSubCategories/", async (req, res) => {
         subCategoryNames[i] = subCategories[i].title;
         console.log(subCategories)
       }
-      let payload = { sentence: req.body.sentence, categories: subCategoryNames, threshold: 3 };
+      let payload = { sentence: req.body.sentence, categories: subCategoryNames, threshold: 2 };
   
       let response = await axios.post('http://18bc-37-111-134-191.ngrok.io/nlp', payload);
       
